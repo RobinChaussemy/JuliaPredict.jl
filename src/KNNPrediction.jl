@@ -1,9 +1,9 @@
 using NearestNeighbors
 
-function KNN_Process(data, indiv, n=5)
+function KNN_Process(data, indiv, n=5, p=2)
     t0 = time()
     process = EncodeData(data, indiv)
-    index = KNN(process[1], process[2], n)
+    index = KNN(process[1], process[2], n,p=2)
     res_predict = round(sum(data[index,:success])/n,digits = 2)
     temps = time() - t0
     return [res_predict temps]
