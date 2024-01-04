@@ -9,8 +9,8 @@ function KNN_Process(data, indiv, n=5)
     return [res_predict temps]
 end
 
-function KNN(X,pred,n = 5)
-    balltree = BallTree(transpose(Matrix(X)), Minkowski(3); reorder = false)
+function KNN(X,pred,n = 5,p = 2)
+    balltree = BallTree(transpose(Matrix(X)), Minkowski(p); reorder = false)
     idxs , dist = knn(balltree, Vector(pred[1,:]), n, true)
     return idxs
 end
