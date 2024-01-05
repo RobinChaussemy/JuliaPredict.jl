@@ -24,7 +24,7 @@ function Forest(X,pred,target,n = 5)
     y_train = Vecty[train_index]
 
     #@load RandomForestClassifier verbosity=2 pkg = DecisionTree
-    model = RandomForestClassifier(n_subfeatures = n)
+    model = RandomForestClassifier(n_trees = n)
 
     DecisionTree.fit!(model, X_train, y_train)
 
